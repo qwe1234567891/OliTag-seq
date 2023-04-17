@@ -1,12 +1,3 @@
-"""
-log.py
-=====
-
-Setup logging utils for nested module logging
-
-Adapted from the accepted answer here: http://stackoverflow.com/questions/7621897/python-logging-module-globally
-"""
-
 import logging
 
 
