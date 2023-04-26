@@ -1,0 +1,24 @@
+reference_genome: ../reference_genome/human.fa
+output_folder: ./
+
+bwa: bwa
+bedtools: bedtools
+
+demultiplex_min_reads: 4000
+
+data1: ["test_1.fq.gz"]
+data2: ["test_2.fq.gz"]
+
+
+samples:
+  EXM1:
+    target: GTGGGGAAGAAGGTGTCTTCNGG
+    barcode1: AACCTCTT
+    barcode2: CCAATCTG
+    description: EXM1
+
+  EXM2:
+    target: GTGGGGAAGAAGGTGTCTTCNGG
+    barcode1: AATACCGC
+    barcode2: CCAATCTG
+    description: EXM2
