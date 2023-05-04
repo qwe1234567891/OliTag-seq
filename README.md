@@ -2,10 +2,24 @@
 The OliTag-seq software package acts as our pipeline for the pretreatment and analysis of OliTag-seq data. The input files are the original sequencing read and manifest files, and the visual svg file is used as the output.
 # The original paper describing OliTag-seq:
 *******************************************
-![image](https://user-images.githubusercontent.com/76864588/236213612-83b8ba28-a1fc-47fe-a83e-fe080be425b3.png)
+
 
 ## Olitag-seq main function:
+The package implements a pipeline composed of data screening and labeling, PCR product filtering and off-target identification modules. Using Illumina sequencing data and manifest file as input, the miss sequence information is obtained through a series of processing, and the results are visualized in the form of svg diagram.
 
+![image](https://user-images.githubusercontent.com/76864588/236216435-b9f82902-10f4-4fb9-812a-787c9f250656.png)
+
+The functions of each submodule are as follows：
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;&nbsp;**Data filtering and labeling：**The reads to be mixed were first screened for data according to linker and barcodes. The data that meets the conditions will be extracted according to the location of UMI. And take 6 bases after linker as small fragment 1. Six bases were taken from the other end of the two-ended sequencing reads as the small slice end. Finally, all three are combined and written into an id for marking. UMI is used as the sorting basis to sort in ascending alphabetical order.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;&nbsp;**PCR Duplicate Consolidation：**Reads with the same UMI and two small sequences of the same genome were considered to be from the same pre-PCR molecule, and the reads with the highest average Q value were represented to improve the quantitative interpretation of the count of GUIDE-Seq Reads.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;&nbsp;**Align to genome：**The demultiplexed, consolidated paired end reads are aligned to a reference genome using the BWA-MEM algorithm with default parameters (Li. H, 2009).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;&nbsp;**Identify ckeavage sites：**The start mapping positions of the read amplified with the tag-specific primer (second of pair) are tabulated on a genome-wide basis. Start mapping positions are consolidated using a 10-bp sliding window. Windows with reads mapping to both + and - strands, or to the same strand but amplified with both forward and reverse tag-specific primers, are flagged as sites of potential DSBs. 25 bp of reference sequence is retrieved on either side of the most frequently occuring start-mapping position in each flagged window. The retrieved sequence is aligned to the intended target sequence using a Smith-Waterman local-alignment algorithm.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.&nbsp;&nbsp;**Annotation and visualization：**Alignment of detected off-target sites is visualized via a color-coded sequence grid.
 
 ## Dependencies:
 * Ubuntu 20.04 or WSL2
