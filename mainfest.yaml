@@ -4,8 +4,6 @@ output_folder: ./
 bwa: bwa
 bedtools: bedtools
 
-demultiplex_min_reads: 4000
-
 data1: ["test_1.fq.gz"]
 data2: ["test_2.fq.gz"]
 
