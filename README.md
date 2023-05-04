@@ -7,7 +7,7 @@ The OliTag-seq software package acts as our pipeline for the pretreatment and an
 
 # 依赖
 
-# 安装
+## 安装
 
 # yaml文件举例，说明
 
