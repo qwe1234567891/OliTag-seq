@@ -127,7 +127,7 @@ class chromosomePosition():
             BED_name = BED_format_chromosome + "_" + str(most_frequent_position) + "_" + str(barcode_sum)
             offtarget_sequence = self.getSequence(self.genome, most_frequent_chromosome, most_frequent_position - 25, most_frequent_position + 25)
 
-            summary_list = [str(x) for x in [index, most_frequent_chromosome, most_frequent_position, offtarget_sequence,                        # pick most frequently occurring chromosome and position
+            summary_list = [str(x) for x in [index, most_frequent_chromosome, most_frequent_position, offtarget_sequence,                        
                                              BED_format_chromosome, min_position, max_position, BED_name,
                                              barcode_plus, barcode_minus, barcode_sum, barcode_geometric_mean,
                                              total_plus, total_minus, total_sum, total_geometric_mean,
@@ -146,7 +146,7 @@ def alignSequences(ref_seq, query_seq):
     # LSA modified for SpCas9
     matches_required = len(ref_seq) - 1 - 6  # allow up to 7 mismatches
     scoring = swalign.NucleotideScoringMatrix(match, mismatch)
-    sw = swalign.LocalAlignment(scoring, gap_penalty=-100, gap_extension_penalty=-100, prefer_gap_runs=True)  # you can also choose gap penalties, etc...
+    sw = swalign.LocalAlignment(scoring, gap_penalty=-100, gap_extension_penalty=-100, prefer_gap_runs=True)  
     forward_alignment = sw.align(ref_seq, query_seq)
     reverse_alignment = sw.align(ref_seq, reverseComplement(query_seq))
     if forward_alignment.matches >= matches_required and forward_alignment.matches > reverse_alignment.matches:
