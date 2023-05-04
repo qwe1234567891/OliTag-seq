@@ -20,7 +20,7 @@ The functions of each submodule are as follows：
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;&nbsp;**Identify ckeavage sites：** The start mapping positions of the read amplified with the tag-specific primer (second of pair) are tabulated on a genome-wide basis. Start mapping positions are consolidated using a 10-bp sliding window. Windows with reads mapping to both + and - strands, or to the same strand but amplified with both forward and reverse tag-specific primers, are flagged as sites of potential DSBs. 25 bp of reference sequence is retrieved on either side of the most frequently occuring start-mapping position in each flagged window. The retrieved sequence is aligned to the intended target sequence using a Smith-Waterman local-alignment algorithm.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.&nbsp;&nbsp;**Annotation and visualization：** Alignment of detected off-target sites is visualized via a color-coded sequence grid.
-
+Notes: ds34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ds39
 ## Dependencies:
 * Ubuntu 20.04 or WSL2
 * Python 2.7 
