@@ -4,7 +4,8 @@ The OliTag-seq software package acts as our pipeline for the pretreatment and an
 *******************************************
 ## Olitag-seq功能:
 
-
+#目录
+    @依赖
 ## 依赖
 
 ## 安装
