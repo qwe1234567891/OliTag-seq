@@ -2,6 +2,8 @@
 The OliTag-seq software package acts as our pipeline for the pretreatment and analysis of OliTag-seq data. The input files are the original sequencing read and manifest files, and the visual svg file is used as the output.
 # The original paper describing OliTag-seq:
 *******************************************
+![image](https://user-images.githubusercontent.com/76864588/236213612-83b8ba28-a1fc-47fe-a83e-fe080be425b3.png)
+
 ## Olitag-seq main function:
 
 
