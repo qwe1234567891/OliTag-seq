@@ -1,3 +1,9 @@
+# -*- coding:utf-8 -*-
+# @Time    :2023/3/24 09:50
+# @Author  :ZZK
+# @ File   :
+# Description:
+
 import svgwrite
 import sys
 import os
@@ -6,7 +12,6 @@ boxWidth = 10
 box_size = 15
 v_spacing = 3
 
-# colors = {'G': '#F5F500', 'A': '#FF5454', 'T': '#00D118', 'C': '#26A8FF', 'N': '#B3B3B3'}
 colors = {'G': '#F5F500', 'A': '#FF5454', 'T': '#00D118', 'C': '#26A8FF', 'N': '#B3B3B3', 'R': '#B3B3B3'}
 
 
