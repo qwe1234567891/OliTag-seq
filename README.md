@@ -5,10 +5,13 @@ The OliTag-seq software package acts as our pipeline for the pretreatment and an
 ## Olitag-seq功能:
 
 
-## 依赖
-
-## 安装
-
+## Dependencies
+*python2.7
+*bwa、bedtools、numpy、matplotlib等依赖包(在environment.yml中)
+*Reference genome fasta file(我们已经将参考基因组fasta上传到百度网盘human:   mouce:)
+## Installation
+<?print
+    print
 ## yaml文件举例，说明
 
 ## 运行
