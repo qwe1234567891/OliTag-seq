@@ -28,7 +28,7 @@ The functions of each submodule are as follows：
 * Ubuntu 20.04 or WSL2
 * Python 2.7 
 * Dependency packages such as bwa, bedtools, numpy, matplotlib (in environment.yml)
-* Reference genome fasta file(We have uploaded the reference genome fasta to Baidu web disk. human:   mouce:)
+* Reference genome fasta file(We have uploaded the reference genome fasta to Baidu web disk. [human](https://pan.baidu.com/s/1wKNr_JJuuuvWkngL_jtiqQ):   cpfa &nbsp;&nbsp;&nbsp;[mouce](https://pan.baidu.com/s/1UxwSA0Rx_PqdvaX-kNPqFg):z1ce)
 ## Installation:
     # We recommend doing the following in a conda. A new conda environment will be created with Environment.yml.
     # Assume that you already own conda and have a conda base environment open...
