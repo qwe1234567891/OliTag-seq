@@ -21,7 +21,8 @@ The functions of each submodule are as follows：
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.&nbsp;&nbsp;**Annotation and visualization：** Alignment of detected off-target sites is visualized via a color-coded sequence grid.
 
-Notes: ds34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ds39(打算作为一个附加功能单独使用的小脚本)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.&nbsp;&nbsp;**ds34 and ds39 full-length insertion：** This is a stand-alone script. It can analyze the ds34 and ds39 full-length insertion of data files in fastq.gz format to generate two text record statistics.
+
 
 ## Dependencies:
 * Ubuntu 20.04 or WSL2
@@ -75,3 +76,6 @@ After downloading our code package and installing it successfully, you can run o
     python OliTag-seq/OliTag.py all -m manifest.yaml
 
 Please note that we don't have a running pipeline for each step, you can test our submodules by code comments, provided you have the output from the previous step.
+Notes: There is a separately run script in OliTag-seq for analyzing the ds34 and ds39 full-length insertion.（DS34_39.py） You can change the value of file in the main function of the script to the path to the data file you want to analyze by running the following command.
+    
+    python OliTag-seq/DS34_39.py
