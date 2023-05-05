@@ -2,14 +2,15 @@
 # @Time    :2023/4/26 14:37
 # @Author  :ZZK
 # @ File   :data.py
-# Description:
+# Description: ds34 and ds39 full-length insertion
 import gzip
 import os
 
+
 def ds34fuu_length_insertion(file):
-    file_34cor = open("A849-34cor.fq", "w")
-    file_34ins = open("A849-34ins.fq", "w")
-    file_txt = open("A849-34.txt", "w")
+    file_34cor = open("34cor.fq", "w")
+    file_34ins = open("34ins.fq", "w")
+    file_txt = open("34.txt", "w")
     f = gzip.open(file, 'rb')
     s1_1 = f.readline().decode('utf-8')
     s1_2 = f.readline().decode('utf-8').replace("\n", "")
@@ -56,23 +57,24 @@ def ds34fuu_length_insertion(file):
                                                                                                        "T").replace("D",
                                                                                                                     "C")[
                   ::-1]
-    cmd1 = "gzip A849-34cor.fq"
-    cmd2 = "gzip A849-34ins.fq"
+    cmd1 = "gzip 34cor.fq"
+    cmd2 = "gzip 34ins.fq"
     os.system(cmd1)
     os.system(cmd2)
-    file_txt.write("{} Total numbers: {} reads\n".format(file,file_numbers))
-    file_txt.write("A849-34cor.fq.gz correct amplicon numbers: {} reads\n".format(file_34cor_numbers))
-    file_txt.write("A849-34cor.fq.gz with ds inserts: {} reads\n".format(file_34ins_numbers))
-    cmd = "Seqkit watch -f ReadLen A849-34ins.fq.gz –O A849-34ins-len.pdf"
+    file_txt.write("{} Total numbers: {} reads\n".format(file, file_numbers))
+    file_txt.write("34cor.fq.gz correct amplicon numbers: {} reads\n".format(file_34cor_numbers))
+    file_txt.write("34cor.fq.gz with ds inserts: {} reads\n".format(file_34ins_numbers))
+    cmd = "Seqkit watch -f ReadLen 34ins.fq.gz –O 34ins-len.pdf"
     os.system(cmd)
     file_txt.write("with 1 ds34 insert 230-250: {} reads\n".format(len230_250_34ins_numbers))
     file_txt.write("with 1 ds34 insert 265-285: {} reads\n".format(len265_285_34ins_numbers))
-    file_txt.write("insertion A849-34cor.fq.gz with FR full length: {} reads\n".format(file_ds34gFR_numbers))
+    file_txt.write("insertion 34cor.fq.gz with FR full length: {} reads\n".format(file_ds34gFR_numbers))
+
 
 def ds39fuu_length_insertion(file):
-    file_39cor = open("A849-39cor.fq", "w")
-    file_39ins = open("A849-39ins.fq", "w")
-    file_txt = open("A849-39.txt", "w")
+    file_39cor = open("39cor.fq", "w")
+    file_39ins = open("39ins.fq", "w")
+    file_txt = open("39.txt", "w")
     f = gzip.open(file, 'rb')
     s1_1 = f.readline().decode('utf-8')
     s1_2 = f.readline().decode('utf-8').replace("\n", "")
@@ -119,11 +121,21 @@ def ds39fuu_length_insertion(file):
                                                                                                        "T").replace("D",
                                                                                                                     "C")[
                   ::-1]
-    file_txt.write("{} Total numbers: {} reads\n".format(file,file_numbers))
-    file_txt.write("A849-39cor.fq.gz correct amplicon numbers: {} reads\n".format(file_39cor_numbers))
-    file_txt.write("A849-39cor.fq.gz with ds inserts: {} reads\n".format(file_39ins_numbers))
-    cmd = "Seqkit watch -f ReadLen A849-39ins.fq.gz –O A849-39ins-len.pdf"
+    file_txt.write("{} Total numbers: {} reads\n".format(file, file_numbers))
+    file_txt.write("39cor.fq.gz correct amplicon numbers: {} reads\n".format(file_39cor_numbers))
+    file_txt.write("39cor.fq.gz with ds inserts: {} reads\n".format(file_39ins_numbers))
+    cmd = "Seqkit watch -f ReadLen 39ins.fq.gz –O 39ins-len.pdf"
     os.system(cmd)
     file_txt.write("with 1 ds39 insert 235-255: {} reads\n".format(len235_255_39ins_numbers))
     file_txt.write("with 1 ds39 insert 270-290: {} reads\n".format(len270_290_39ins_numbers))
-    file_txt.write("insertion A849-39cor.fq.gz with FR full length: {} reads\n".format(file_ds39gFR_numbers))
+    file_txt.write("insertion 39cor.fq.gz with FR full length: {} reads\n".format(file_ds39gFR_numbers))
+
+
+if __name__ == '__main__':
+    file = "example.fq.gz"  # The file you want to analyze
+    print("Now the full-length insertion analysis of ds34 begins:\n")
+    ds34fuu_length_insertion(file)
+    print("The full-length insertion analysis of ds34 has over:\n")
+    print("Now the full-length insertion analysis of ds39 begins:\n")
+    ds39fuu_length_insertion(file)
+    print("The full-length insertion analysis of ds39 has over:\n")
