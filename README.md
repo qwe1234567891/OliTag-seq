@@ -1,7 +1,7 @@
 # OliTag-seq：The OliTag-seq Analysis Package
 The OliTag-seq software package acts as our pipeline for the pretreatment and analysis of OliTag-seq data. The input files are the original sequencing read and manifest files, and the visual svg file is used as the output.
 # The original paper describing OliTag-seq:
-*******************************************
+OliTag-seq: A Superior In Cellulo Assay for CRISPR-Cas9 Off-Target Detection
 
 
 ## Olitag-seq main function:
